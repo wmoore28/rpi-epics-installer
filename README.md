@@ -17,9 +17,9 @@ NOTE: the build will take a while...
   * synApps_RELEASE - release file to override default and only build a subset of apps.  Other libs required for apps that are not likely to be needed.
 
 ## Testing
+
+If needed, source env config for $PATH/etc:
 ```
-# if needed, source one or both env configs:
-$> . ./proxyrc
 $> . ./epicsrc
 ```
 
