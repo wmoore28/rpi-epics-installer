@@ -1,0 +1,3 @@
+# Needed at JLab
+export http_proxy=http://jprox.jlab.org:8081
+export https_proxy=https://jprox.jlab.org:8081
