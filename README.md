@@ -7,7 +7,7 @@ NOTE: the build will take a while...
   * EPICS_BASE 3.14.12.6
   * EPICS_HOST_ARCH linux-arm
   * SynApps 5.8 (only a subset gets compiled)
-  * EPICS Extensions (currently only msi)
+  * EPICS Extensions (currently medm, msi, striptool)
   * PyEpics (not currently included)
 
 ## Files
