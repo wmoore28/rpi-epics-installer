@@ -39,9 +39,27 @@ fi
 
 echo "Installing EPICS extensions..."
 if [ ! -d ${EPICS_EXTENSIONS} ]; then
+    # needed packages
+    apt-get install -y \
+        lesstif2-dev \
+        libx11-dev \
+        libxmu-dev \
+        libxpm-dev \
+        libxt-dev
     cd ${EPICS_TOP}
-    git clone https://github.com/wmoore28/epics-extensions extensions
-    cd extensions
+    # extensions top
+    git clone https://github.com/epics-extensions/extensions
+    cd ${EPICS_EXTENSIONS}/src
+    # medm
+    git clone https://github.com/epics-extensions/medm
+    # msi - needed by synApps/devIocStats
+    curl -LO https://epics.anl.gov/download/extensions/msi1-7.tar.gz
+    tar xvzf msi1-7.tar.gz
+    rm *.gz
+    ln -s msi1-7 msi
+    # striptool
+    git clone https://github.com/epics-extensions/StripTool
+    cd ${EPICS_EXTENSIONS}
     make
 else
     echo "EPICS extensions already installed at ${EPICS_EXTENSIONS}"
